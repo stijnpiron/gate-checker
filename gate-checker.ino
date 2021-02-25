@@ -28,7 +28,7 @@
 
 #include <ArduinoOTA.h>
 #include "basicOTA.h"
-#include "RgbLed.h"
+#include "RgbLed/RgbLed.h"
 
 #define DEBUG 1 //comment/uncomment this line to disable/enable debug logging to serial monitor
 
