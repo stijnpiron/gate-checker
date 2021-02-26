@@ -5,6 +5,8 @@
  * and the feedback_state variable triggers the blinking
  * of the RGB LED in the appropriate color. 
  * 
+ * Depends on the RGB LED library: https://github.com/stijnpiron/arduino-rgb-led
+ * 
  * OTA updates are supported to update the device without 
  * the need to dismount or dismantle it from the installation.
  * A working WiFi connection is required, make sure to set 
@@ -28,8 +30,8 @@
 
 #include <ArduinoOTA.h>
 #include "basicOTA.h"
-#include "RgbLed/RgbLed.h"
 
+#include <RgbLed.h>
 #define DEBUG 1 //comment/uncomment this line to disable/enable debug logging to serial monitor
 
 /* Global variables */
@@ -179,7 +181,7 @@ void blink_blue(){
   Serial.println(message);
   #endif
   
-  led->blinkled(0, 0, 255, blink_time, blink_offset);
+//  led->blinkled(0, 0, 255, blink_time, blink_offset);
 }
 
 // the LED is on in the color ORANGE
@@ -192,7 +194,7 @@ void blink_orange(){
   Serial.println(message);
   #endif
   
-  led->blinkled(255, 165, 0, blink_time, blink_offset);
+//  led->blinkled(255, 165, 0, blink_time, blink_offset);
 }
 
 // when the gates are both closed, blink GREEN
@@ -204,5 +206,5 @@ void blink_closed(){
   
   Serial.println(message);
   #endif
-  led->blinkled(0, 255, 0, closed_blink_time, closed_offset);
+//  led->blinkled(0, 255, 0, closed_blink_time, closed_offset);
 }
